@@ -1,4 +1,8 @@
 # 3310 Snake
+Ši programėlė – tai žaidimas, įkvėptas klasikinio „Snake“ žaidimo. Žaidėjas valdo gyvatę, kuri turi valgyti maistą, kad augtų, tačiau turi vengti susidurti su savo kūnu ir kraštais. Žaidimas baigiasi, kai gyvatė susiduria su sienomis arba savo kūnu.
+Norint paleisti žaidimą, reikalinga Python aplinka, kurioje įdiegta Pygame biblioteka. Po to tereikia atlikti šiuos žingsnius: Atsisiųsti žaidimo failus ir paleisti snake.py failą.
+Žaidėjas valdo gyvatę naudodamas rodyklių klavišus. Tikslas – suvalgyti maistą ir padidinti gyvatės ilgį, nesusiduriant su sienomis ar pačios gyvatės kūnu. Žaidimas baigiasi, jei įvyksta viena iš šių sąlygų.
+# Analizė
 ## Polimorfizmas
 Kas tai?
 Polimorfizmas reiškia galimybę skirtingiems objektams reaguoti į tą patį metodą skirtingais būdais. Tai leidžia vieną metodą naudoti kelioms klasėms, tačiau kiekviena klasė įgyvendina šį metodą pagal savo poreikius.
@@ -190,28 +194,56 @@ screen.blit(best_score_surface, (OFFSET - 5, OFFSET + cell_size * number_of_cell
 Rašymas į failą (save_score()): Kai žaidimas baigiasi, išsaugomas rezultatas į failą.
 Skaitymas iš failo (load_scores()): Užkrauname geriausią rezultatą ir rodomą ekrane.
 Geriausio rezultato rodymas: Geriausias rezultatas rodomas žaidimo ekrane.
+## Mano pateiktame unittest kode yra šie testai, kurie tikrina įvairias žaidimo funkcijas:
+test_save_score
+Testuoja, ar teisingai išsaugomas taškų rezultatas į failą.
 
+test_load_scores
+Patikrina, ar kelias rezultatų išsaugotas failuose ir teisingai užkraunami.
 
+test_load_scores_empty
+Tikrina, ar failas yra tuščias, jei nėra įrašytų taškų.
 
+test_food_position_on_edge
+Tikrina, kad maistas nebūtų sugeneruotas ant krašto, kur gyvatė gali susidurti.
 
+test_snake_length_increase
+Patikrina, ar gyvatės ilgis padidėja, kai ji suvalgo maistą.
 
+test_game_over_collision_with_wall
+Testuoja, ar žaidimas baigiasi, jei gyvatė susiduria su siena.
 
+test_score_increase
+Patikrina, ar taškai padidėja po to, kai gyvatė suvalgo maistą.
 
+test_food_generation
+Testuoja, kad maistas nesusiduria su gyvate ir visada generuojamas kitoje vietoje.
 
+test_game_start
+Patikrina, ar žaidimas prasideda, kai žaidėjas paspaudžia klavišą.
 
+test_game_state_transition
+Patikrina, ar žaidimo būsena keičiasi tarp „RUNNING“ ir „STOPPED“.
 
+test_multiple_game_updates
+Patikrina, ar žaidimas atnaujinamas kelis kartus ir gyvatė teisingai juda.
 
+test_snake_cannot_turn_180
+Testuoja, kad gyvatė negali apsukti savo krypties 180 laipsnių kampu.
 
+test_game_start_and_reset
+Patikrina, ar žaidimas prasideda ir baigiasi teisingai po paspaudimo.
 
-
-
-
-
-
-
-
-# 3310 Snake
-Ši programėlė – tai žaidimas, įkvėptas klasikinio „Snake“ žaidimo. Žaidėjas valdo gyvatę, kuri turi valgyti maistą, kad augtų, tačiau turi vengti susidurti su savo kūnu ir kraštais. Žaidimas baigiasi, kai gyvatė susiduria su sienomis arba savo kūnu.
-Norint paleisti žaidimą, reikalinga Python aplinka, kurioje įdiegta Pygame biblioteka. Po to tereikia atlikti šiuos žingsnius:
-Atsisiųsti žaidimo failus (atsisiųsti iš nurodyto šaltinio).
-Paleisti snake.py failą su Python komanda.
+test_best_score_persistence
+Tikrina, ar geriausias rezultatas išsaugomas ir užkraunamas teisingai.
+### Programa tenkina PEP8 style guidelines.
+## Rezultatai:
+Sukūriau unit testus, užtikrinančius žaidimo funkcionalumą (pvz., gyvatės ilgio padidėjimas ir žaidimo pabaiga).
+Įdėjau vaizdą į maistą ir užtikrinau, kad jis nesikerta su gyvatės kūnu.
+Susidūriau su iššūkiais, ypač dėl judėjimo apribojimų, kad gyvatė negalėtų judėti atgal.
+Testavau žaidimą su įvairiais žaidėjų įvedimais.
+##Išvados:
+Sukūriau funkcinį žaidimą, kuriame gyvatė juda ir valgo maistą, taip pat pasibaigia, kai susiduria su siena ar savo kūnu.
+Sukurtas taškų sistemos ir rezultatai, kuriuos galima išsaugoti ir užkrauti naudojant failus.
+Programoje įdiegti pagrindiniai žaidimo mechanizmai, tokie kaip maisto generavimas ir gyvatės ilgio didinimas.
+### Ateityje būtų galima pridėti įvairių lygių, sudėtingumo lygio variantų ir vizualinių patobulinimų, kad žaidimas būtų dar įdomesnis ir interaktyvesnis.
