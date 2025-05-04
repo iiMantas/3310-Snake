@@ -240,3 +240,4 @@ Grafika: 1 GB VRAM arba didesnė, su OpenGL 3.0 palaikymu
 Saugojimas: 200 MB laisvos vietos diske
 
 Papildoma įranga: Klaviatūra, pelė arba žaidimų pultas
+https://github.com/iiMantas/3310-Snake
