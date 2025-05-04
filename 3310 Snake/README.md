@@ -137,59 +137,59 @@ Skaitymas iš failo (load_scores()): Užkrauname geriausią rezultatą ir rodom�
 Geriausio rezultato rodymas: Geriausias rezultatas rodomas žaidimo ekrane.
 ## Mano pateiktame unittest kode yra šie testai, kurie tikrina įvairias žaidimo funkcijas:
 
-###test_save_score
+### test_save_score
 
 Testuoja, ar teisingai išsaugomas taškų rezultatas į failą.
 
-###test_load_scores
+### test_load_scores
 
 Patikrina, ar kelias rezultatų išsaugotas failuose ir teisingai užkraunami.
 
-###test_load_scores_empty
+### test_load_scores_empty
 
 Tikrina, ar failas yra tuščias, jei nėra įrašytų taškų.
 
-###test_food_position_on_edge
+### test_food_position_on_edge
 
 Tikrina, kad maistas nebūtų sugeneruotas ant krašto, kur gyvatė gali susidurti.
 
-###test_snake_length_increase
+### test_snake_length_increase
 
 Patikrina, ar gyvatės ilgis padidėja, kai ji suvalgo maistą.
 
-###test_game_over_collision_with_wall
+### test_game_over_collision_with_wall
 
 Testuoja, ar žaidimas baigiasi, jei gyvatė susiduria su siena.
 
-###test_score_increase
+### test_score_increase
 
 Patikrina, ar taškai padidėja po to, kai gyvatė suvalgo maistą.
 
-###test_food_generation
+### test_food_generation
 
 Testuoja, kad maistas nesusiduria su gyvate ir visada generuojamas kitoje vietoje.
 
-###test_game_start
+### test_game_start
 
 Patikrina, ar žaidimas prasideda, kai žaidėjas paspaudžia klavišą.
 
-###test_game_state_transition
+### test_game_state_transition
 
 Patikrina, ar žaidimo būsena keičiasi tarp „RUNNING“ ir „STOPPED“.
 
-###test_multiple_game_updates
+### test_multiple_game_updates
 
 Patikrina, ar žaidimas atnaujinamas kelis kartus ir gyvatė teisingai juda.
 
-###test_snake_cannot_turn_180
+### test_snake_cannot_turn_180
 
 Testuoja, kad gyvatė negali apsukti savo krypties 180 laipsnių kampu.
 
-###test_game_start_and_reset
+### test_game_start_and_reset
 
 Patikrina, ar žaidimas prasideda ir baigiasi teisingai po paspaudimo.
 
-###test_best_score_persistence
+### test_best_score_persistence
 
 Tikrina, ar geriausias rezultatas išsaugomas ir užkraunamas teisingai.
 
