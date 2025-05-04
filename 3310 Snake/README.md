@@ -66,34 +66,48 @@ Abstrakcija leidžia žaidimui nesigilinti į detales, tiesiog iškviečiant ben
 Paveldėjimas leidžia Food ir Snake paveldėti savybes ir metodus iš GameObject klasės.
 Encapsuliacija užtikrina, kad gyvatės kūnas ir pozicija yra paslėpti ir gali būti keičiami tik per metodus.
 ## Singleton dizaino šablonas
+
 Kas tai?
+
 Singleton dizaino šablonas užtikrina, kad klasė turės tik vieną egzempliorių (objektą) visoje sistemoje, ir suteikia globalų tašką šiam objektui pasiekti.
 
 Kaip jis veikia?
+
 Singleton šablonas apriboja klasės instancijų kūrimą iki vienos ir suteikia būdą gauti tą vieną egzempliorių. Pavyzdžiui, jei žaidime yra tik vienas Game objektas, Singleton užtikrina, kad nesukursi kitos Game klasės instancijos, nes visada dirbsi su tuo pačiu egzemplioriumi.
 
 Kodą pritaikymas
+
 Mano žaidime yra naudojamas Singleton šablonas per GameSingleton klasę. Šis šablonas užtikrina, kad Game klasė turi tik vieną egzempliorių, nepriklausomai nuo to, kiek kartų bandysime sukurti Game objektą.
 ### Pavyzdys
 ![image](https://github.com/user-attachments/assets/282da24d-9e6c-4a7e-9aee-b5235c514ce5)
 
 #### Singleton dizaino šablonas buvo pasirinktas norint užtikrinti, kad žaidime bus tik viena Game klasės instancija. Tai naudingas šablonas, nes jis leidžia valdyti žaidimo būseną ir įvykio tvarkymą tik per vieną objektą, taip išvengiant klaidų, kai būtų sukuriama daugiau nei viena Game klasės instancija.
+
 Singleton šablonas čia yra tinkamas, nes mes tikrai nenorime turėti kelių žaidimo egzempliorių vienu metu. Turint tik vieną Game egzempliorių, mes užtikriname, kad žaidimo būsenos ir kiti parametrai bus valdomi vienoje vietoje. Tai padeda lengviau valdyti žaidimo srautą, ypač kai norime stebėti globalią žaidimo būseną (pvz., RUNNING arba STOPPED).
 ## Kompozicija:
+
 Kompozicija reiškia, kad vienas objektas yra sudarytas iš kitų objektų. Tai rodo stiprų ryšį tarp objektų, ir jei tėvinis objektas sunaikinamas, visi jo sudedamieji objektai taip pat yra sunaikinami.
+
 Mano žaidime Game klasė turi Snake ir Food objektus, ir šie objektai negali egzistuoti be Game objekto, nes jie priklauso žaidimo logikai ir būsenai. Tai yra kompozicija, nes Game klasė sudaro žaidimo logiką, kur Snake ir Food yra būtini komponentai, kuriems veikiant žaidimui.
+
 #### Pavyzdys
 ![image](https://github.com/user-attachments/assets/725780df-fa7a-42e6-a52e-b83f45fbea70)
 
 ## Agregacija:
+
 Agregacija reiškia silpnesnį ryšį, kai objektas gali priklausyti kitam objektui, tačiau jie gali egzistuoti nepriklausomai. Agregacija leidžia objekto dalims būti naudojamoms daugiau nei vienoje vietoje.
+
 Agregacija naudojama, nes Snake ir Food objektai gali egzistuoti nepriklausomai nuo Game objekto. Pavyzdžiui, galima sukurti Snake objektą be Game, o Game gali užtikrinti, kad objektas būtų naudojamas tinkamu būdu.
+
 ### Pavyzdys 
 ![image](https://github.com/user-attachments/assets/24834d2a-071f-49c3-9a7b-2fa8e7975d8b)
 
 ### Trumpai
+
 Kompozicija naudojama, nes Game turi Snake ir Food kaip savo sudedamąsias dalis. Jie negali egzistuoti be žaidimo.
+
 Agregacija naudojama, nes Snake ir Food gali egzistuoti nepriklausomai nuo Game, tačiau jie naudojami žaidimo logikoje.
+
 ## Funkcija save_score (Rašymas į failą):
 ![image](https://github.com/user-attachments/assets/2674c9cf-f058-4a8a-b3ec-7d7f36a1894e)
 
@@ -107,59 +121,86 @@ Agregacija naudojama, nes Snake ir Food gali egzistuoti nepriklausomai nuo Game,
 ![image](https://github.com/user-attachments/assets/17153ed5-3c99-479e-86bb-07beb9779c8a)
 
 ### Trumpai
+
 Rašymas į failą (save_score()): Kai žaidimas baigiasi, išsaugomas rezultatas į failą.
+
 Skaitymas iš failo (load_scores()): Užkrauname geriausią rezultatą ir rodomą ekrane.
+
 Geriausio rezultato rodymas: Geriausias rezultatas rodomas žaidimo ekrane.
 ## Mano pateiktame unittest kode yra šie testai, kurie tikrina įvairias žaidimo funkcijas:
+
 test_save_score
+
 Testuoja, ar teisingai išsaugomas taškų rezultatas į failą.
 
 test_load_scores
+
 Patikrina, ar kelias rezultatų išsaugotas failuose ir teisingai užkraunami.
 
 test_load_scores_empty
+
 Tikrina, ar failas yra tuščias, jei nėra įrašytų taškų.
 
 test_food_position_on_edge
+
 Tikrina, kad maistas nebūtų sugeneruotas ant krašto, kur gyvatė gali susidurti.
 
 test_snake_length_increase
+
 Patikrina, ar gyvatės ilgis padidėja, kai ji suvalgo maistą.
 
 test_game_over_collision_with_wall
+
 Testuoja, ar žaidimas baigiasi, jei gyvatė susiduria su siena.
 
 test_score_increase
+
 Patikrina, ar taškai padidėja po to, kai gyvatė suvalgo maistą.
 
 test_food_generation
+
 Testuoja, kad maistas nesusiduria su gyvate ir visada generuojamas kitoje vietoje.
 
 test_game_start
+
 Patikrina, ar žaidimas prasideda, kai žaidėjas paspaudžia klavišą.
 
 test_game_state_transition
+
 Patikrina, ar žaidimo būsena keičiasi tarp „RUNNING“ ir „STOPPED“.
 
 test_multiple_game_updates
+
 Patikrina, ar žaidimas atnaujinamas kelis kartus ir gyvatė teisingai juda.
 
 test_snake_cannot_turn_180
+
 Testuoja, kad gyvatė negali apsukti savo krypties 180 laipsnių kampu.
 
 test_game_start_and_reset
+
 Patikrina, ar žaidimas prasideda ir baigiasi teisingai po paspaudimo.
 
 test_best_score_persistence
+
 Tikrina, ar geriausias rezultatas išsaugomas ir užkraunamas teisingai.
+
 ### Programa tenkina PEP8 style guidelines.
+
 ## Rezultatai:
+
 Sukūriau unit testus, užtikrinančius žaidimo funkcionalumą (pvz., gyvatės ilgio padidėjimas ir žaidimo pabaiga).
+
 Įdėjau vaizdą į maistą ir užtikrinau, kad jis nesikerta su gyvatės kūnu.
+
 Susidūriau su iššūkiais, ypač dėl judėjimo apribojimų, kad gyvatė negalėtų judėti atgal.
+
 Testavau žaidimą su įvairiais žaidėjų įvedimais.
 ##Išvados:
+
 Sukūriau funkcinį žaidimą, kuriame gyvatė juda ir valgo maistą, taip pat pasibaigia, kai susiduria su siena ar savo kūnu.
+
 Sukurtas taškų sistemos ir rezultatai, kuriuos galima išsaugoti ir užkrauti naudojant failus.
+
 Programoje įdiegti pagrindiniai žaidimo mechanizmai, tokie kaip maisto generavimas ir gyvatės ilgio didinimas.
 ### Ateityje būtų galima pridėti įvairių lygių, sudėtingumo lygio variantų ir vizualinių patobulinimų, kad žaidimas būtų dar įdomesnis ir interaktyvesnis.
