@@ -213,7 +213,7 @@ Sukurtas taškų sistemos ir rezultatai, kuriuos galima išsaugoti ir užkrauti 
 Programoje įdiegti pagrindiniai žaidimo mechanizmai, tokie kaip maisto generavimas ir gyvatės ilgio didinimas.
 ### Ateityje būtų galima pridėti įvairių lygių, sudėtingumo lygio variantų ir vizualinių patobulinimų, kad žaidimas būtų dar įdomesnis ir interaktyvesnis.
 ## Sistemos reikalavimai:
-Minimalūs sistemos reikalavimai:
+### Minimalūs sistemos reikalavimai:
 
 OS: Series 20.
 
@@ -227,7 +227,7 @@ Vieta: 16MB
 
 Papildoma įranga: Pakrovėjas, kad neišsikrautu ir toliau galėtum žaisti.
 
-Rekomenduojami sistemos reikalavimai:
+### Rekomenduojami sistemos reikalavimai:
 
 OS: Windows 10
 
