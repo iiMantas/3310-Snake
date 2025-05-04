@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/f739e17b-85ac-4677-b8e7-751d1350264d)
 # 3310 Snake
 Ši programėlė – tai žaidimas, įkvėptas klasikinio „Snake“ žaidimo. Žaidėjas valdo gyvatę, kuri turi valgyti maistą, kad augtų, tačiau turi vengti susidurti su savo kūnu ir kraštais. Žaidimas baigiasi, kai gyvatė susiduria su sienomis arba savo kūnu.
 Norint paleisti žaidimą, reikalinga Python aplinka, kurioje įdiegta Pygame biblioteka. Po to tereikia atlikti šiuos žingsnius: Atsisiųsti žaidimo failus ir paleisti snake.py failą.
