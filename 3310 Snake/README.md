@@ -51,20 +51,28 @@ Mano žaidime klasės Food ir Snake paveldi nuo bendros GameObject klasės. Tai 
 
 #### Paveldėjimas naudojamas per bendrą GameObject klasę, iš kurios paveldi tiek Food, tiek Snake. Tai padeda sumažinti kodo pasikartojimą ir centralizuoti bendrą logiką, pvz., poziciją.
 ## Encapsuliacija
+
 Kas tai?
+
 Encapsuliacija reiškia, kad objektų duomenys yra paslėpti ir gali būti pasiekiami tik per metodus. Tai padeda valdyti ir saugoti objekto būseną.
 
 Kaip tai veikia tavo žaidime?
+
 Mano žaidime gyvatės kūnas (body) ir pozicija yra encapsuliuoti Snake klasėje. Tai leidžia apsaugoti šiuos duomenis nuo tiesioginio keitimo ir suteikia metodus, per kuriuos galima juos atnaujinti (pvz., per update() metodą).
 ### Pavyzdys
 ![image](https://github.com/user-attachments/assets/7a27b6cc-70a3-4385-b786-355f458df5e2)
 
 #### Encapsuliacija naudojama gyvatės kūnui ir maisto pozicijai saugoti. Kūnas yra privačiai saugomas kaip _body ir gali būti keičiamas tik per metodus, tokius kaip get_body() ir update().
 ### Santrauka:
+
 Polimorfizmas naudojamas, nes Food ir Snake turi bendrą draw() metodą, tačiau kiekvienas jų turi savo piešimo logiką.
+
 Abstrakcija leidžia žaidimui nesigilinti į detales, tiesiog iškviečiant bendrą metodą draw().
+
 Paveldėjimas leidžia Food ir Snake paveldėti savybes ir metodus iš GameObject klasės.
+
 Encapsuliacija užtikrina, kad gyvatės kūnas ir pozicija yra paslėpti ir gali būti keičiami tik per metodus.
+
 ## Singleton dizaino šablonas
 
 Kas tai?
