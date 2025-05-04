@@ -122,7 +122,7 @@ Agregacija naudojama, nes Snake ir Food gali egzistuoti nepriklausomai nuo Game,
  ## Funkcija load_scores (Skaitymas iš failo):
  ![image](https://github.com/user-attachments/assets/cf49ac93-b7c1-42cc-a822-1eda4a9ea2b2)
 
-## Užkrauti geriausią rezultatą ir išsaugoti (Naudojimas žaidime):Atnaujinsime Game klasę, kad galėčiau užkrauti geriausią rezultatą ir išsaugoti rezultatą žaidimo pabaigoje.
+## Užkrauti geriausią rezultatą ir išsaugoti: Atnaujinsime Game klasę, kad galėčiau užkrauti geriausią rezultatą ir išsaugoti rezultatą žaidimo pabaigoje.
 ![image](https://github.com/user-attachments/assets/c3a83ac1-29eb-401c-b538-23fb3685b1eb)
 
 ## Geriausio rezultato rodymas ekrane: Pridėjau funkciją, kad žaidime būtų matomas geriausias rezultatas. Tai bus padaryta naudojant best_score iš Game klasės.
