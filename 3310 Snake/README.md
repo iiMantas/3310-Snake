@@ -6,34 +6,46 @@ Norint paleisti žaidimą, reikalinga Python aplinka, kurioje įdiegta Pygame bi
 Žaidėjas valdo gyvatę naudodamas rodyklių klavišus. Tikslas – suvalgyti maistą ir padidinti gyvatės ilgį, nesusiduriant su sienomis ar pačios gyvatės kūnu. Žaidimas baigiasi, jei įvyksta viena iš šių sąlygų.
 # Analizė
 ## Polimorfizmas
+
 Kas tai?
+
 Polimorfizmas reiškia galimybę skirtingiems objektams reaguoti į tą patį metodą skirtingais būdais. Tai leidžia vieną metodą naudoti kelioms klasėms, tačiau kiekviena klasė įgyvendina šį metodą pagal savo poreikius.
 
 Kaip tai veikia?
+
 Kai metodas yra iškviečiamas ant skirtingų objektų, kurie priklauso skirtingoms klasėms, bus iškviesta teisinga versija priklausomai nuo objekto tipo.
 
 Kaip tai naudojama tavo žaidime?
+
 Mano žaidime polimorfizmas naudojamas per draw() metodą, kuris yra tiek Food, tiek Snake klasėse. Nors abi klasės turi tą patį metodą (draw()), jų įgyvendinimas skiriasi. Game klasė neturi žinoti, kas yra piešiamas, ji tiesiog iškviečia draw() metodą, o teisingas įgyvendinimas priklauso nuo to, ar tai Snake ar Food objektas.
 ### Pavyzdys
 ![image](https://github.com/user-attachments/assets/1552b21b-29e3-486d-b865-099cbc65330f)
 
 #### Polimorfizmas naudojamas, nes Food ir Snake klasės turi tą patį draw() metodą, tačiau jis yra įgyvendintas skirtingai kiekvienoje klasėje. Game klasė tiesiog iškviečia draw() metodą, nepriklausomai nuo objekto tipo.
 ## Abstrakcija
+
 Kas tai?
+
 Abstrakcija slepia sudėtingą detalių logiką ir leidžia dirbti su aukštesnio lygio metodais.
 
 Kaip tai veikia tavo žaidime?
+
 Game klasė nesirūpina tuo, kaip tiksliai piešiami maistas ar gyvatė. Ji tiesiog iškviečia draw() metodą, o kuris metodas bus iškviestas priklauso nuo objekto tipo (Snake arba Food). Tai yra abstrakcija, nes žaidimas nesigilina į detales, tiesiog pasikliauja, kad kiekvienas objektas žino, kaip jį reikia nupiešti.
+
 ### Pavyzdys
 ![image](https://github.com/user-attachments/assets/f87e2c66-3d9c-4eb1-8451-6173dddc92b9)
 
 #### Abstrakcija naudojama tuo, kad Game klasė tiesiog iškviečia draw() metodą, nesigilindama, kas tiksliai yra piešiama. Kiekvienas objektas žino, kaip jį nupiešti, o žaidimas tik iškviečia bendrą metodą.
 ## Paveldėjimas
+
 Kas tai?
+
 Paveldėjimas leidžia sukurti naujas klases, kurios paveldi savybes ir metodus iš kitų klasių. Tai leidžia sukurti hierarchijas ir išvengti kodo pasikartojimo.
 
 Kaip tai veikia tavo žaidime?
+
 Mano žaidime klasės Food ir Snake paveldi nuo bendros GameObject klasės. Tai leidžia jiems dalintis bendromis savybėmis (pvz., position) ir metodais, bet kiekviena klasė gali įgyvendinti savo versiją metodų (pvz., draw()).
+
 ### Pavyzdys
 ![image](https://github.com/user-attachments/assets/68407650-6166-4766-acb1-d10edfeec2a3)
 
